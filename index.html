@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Training to Vue.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+    </div>
+
+    <div id="app2">
+        <span v-bind:title="message">
+                Passez votre souris sur moi pendant quelques secondes
+                pour voir mon titre lié dynamiquement !
+        </span>
+    </div>
+
+    <div id="app3">
+        <p v-if="seen">Maintenant vous me voyez</p>
+    </div>
+
+    <div id="app4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+    </div>
+
+    <div id="app5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">Retourner le message</button>
+    </div>
+
+    <div id="app6">
+        <p>{{ message }}</p>
+        <input v-model="message">
+    </div>
+
+    <div id="app7">
+        <ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+
+            </todo-item>
+        </ol>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
